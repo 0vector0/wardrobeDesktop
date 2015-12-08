@@ -36,6 +36,8 @@ public class ConsoleMenu {
 		System.out.println(sdf.format(date));
 		sdf = new SimpleDateFormat("E mm dd yyyy");
 		System.out.println(sdf.format(date));
+		
+		//testgit
 	}
 
 }
