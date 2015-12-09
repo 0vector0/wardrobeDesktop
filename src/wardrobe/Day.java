@@ -3,12 +3,12 @@ package wardrobe;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class TestDay {
+public class Day {
 
 	
 	GregorianCalendar testDay = new GregorianCalendar();
 	
-	TestDay(){
+	Day(){
 	}
 	
 	public void NextDay(){
