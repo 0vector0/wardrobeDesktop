@@ -1,11 +1,10 @@
 package wardrobe;
 
-import java.util.Scanner;
 
 public class ConsoleMenu {
 	
-	private static Scanner sc = new Scanner(System.in);
-	private static int inputNumber = 9999;
+	//private static Scanner sc = new Scanner(System.in);
+//	private static int inputNumber = 9999;
 	static int i = 0;
 
 	public static void main(String[] args) {
