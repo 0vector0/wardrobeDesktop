@@ -26,29 +26,38 @@ public class ProductOnFigure extends JPanel {
 		this.imageProduct = "/product_default_" + imageDefaultProduct  + ".png";
 		setLayout(new BorderLayout(0, 0));
 		
+		Image img = new ImageIcon(this.getClass().getResource(this.imageProduct)).getImage().getScaledInstance(128, 128, Image.SCALE_DEFAULT);
 		
-		labelProductDescription = new JLabel();
-		labelProductDescription.setHorizontalAlignment(SwingConstants.CENTER);
-		labelProductDescription.setText("Описание продукта");
-		add(labelProductDescription, BorderLayout.SOUTH);
+		JPanel panelDescription = new JPanel();
+		add(panelDescription, BorderLayout.CENTER);
+		panelDescription.setLayout(new BorderLayout(0, 0));
+		
+		JLabel label = new JLabel("Название продукта");
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		panelDescription.add(label, BorderLayout.NORTH);
 		
 		JLabel labelProductImg = new JLabel("");
+		panelDescription.add(labelProductImg, BorderLayout.CENTER);
 		labelProductImg.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		Image img = new ImageIcon(this.getClass().getResource(this.imageProduct)).getImage().getScaledInstance(128, 128, Image.SCALE_DEFAULT);
 		labelProductImg.setIcon(new ImageIcon(img));
 		
-		add(labelProductImg, BorderLayout.CENTER);
+		
+		labelProductDescription = new JLabel();
+		panelDescription.add(labelProductDescription, BorderLayout.SOUTH);
+		labelProductDescription.setHorizontalAlignment(SwingConstants.CENTER);
+		labelProductDescription.setText("Описание продукта");
+		
+		JPanel panelButtons = new JPanel();
+		add(panelButtons, BorderLayout.SOUTH);
 		
 		JButton buttonPreviousProduct = new JButton("<-");
-		add(buttonPreviousProduct, BorderLayout.WEST);
+		panelButtons.add(buttonPreviousProduct);
+		
+		JButton buttonDeleteProduct = new JButton("X");
+		panelButtons.add(buttonDeleteProduct);
 		
 		JButton buttonNextProduct = new JButton("->");
-		add(buttonNextProduct, BorderLayout.EAST);
-		
-		JLabel labelProductName = new JLabel("Название продукта");
-		labelProductName.setHorizontalAlignment(SwingConstants.CENTER);
-		add(labelProductName, BorderLayout.NORTH);
+		panelButtons.add(buttonNextProduct);
 
 	}
 
