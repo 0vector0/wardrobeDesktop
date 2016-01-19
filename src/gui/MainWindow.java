@@ -12,6 +12,10 @@ import javax.swing.BoxLayout;
 import javax.swing.JTextPane;
 import javax.swing.JButton;
 import java.awt.GridLayout;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Component;
+import javax.swing.Box;
 
 public class MainWindow {
 
@@ -56,25 +60,34 @@ public class MainWindow {
 		frame.setTitle("Шкаф");
 		frame.setResizable(false);
 		//frame.setSize( screenWidth-100,screenHeight-100);
-		frame.setBounds(50, 50, screenWidth-100, screenHeight-100);
+		//frame.setBounds(50, 50, screenWidth-100, screenHeight-100);
+		frame.setBounds(50, 50, screenHeight-100, screenHeight-100);
 		//frame.setLocationByPlatform(true);
 		//frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JPanel panelFigure = new JPanel();
-		frame.getContentPane().add(panelFigure, BorderLayout.CENTER);
-		panelFigure.setLayout(new BorderLayout(0, 0));
+		JPanel panelLeft = new JPanel();
+		frame.getContentPane().add(panelLeft, BorderLayout.WEST);
+		panelLeft.setLayout(new BoxLayout(panelLeft, BoxLayout.Y_AXIS));
 		
-		JTextPane textPaneFigureName = new JTextPane();
-		textPaneFigureName.setText("Фигурка человека");
-		panelFigure.add(textPaneFigureName, BorderLayout.NORTH);
+		//JPanel panel = new JPanel();
+		DatePanel datePanel = new DatePanel();
+		panelLeft.add(datePanel);
+		
+		AddProductPanel addProductPanel = new AddProductPanel();
+		//JPanel panel = new JPanel();
+		panelLeft.add(addProductPanel);
+		
+		JPanel panelRight = new JPanel();
+		frame.getContentPane().add(panelRight, BorderLayout.EAST);
+		panelRight.setLayout(new BorderLayout(0, 0));
 		
 		//JPanel panel = new JPanel();
 		PanelFigureGrid figure = new PanelFigureGrid();
-		panelFigure.add(figure, BorderLayout.WEST);
+		panelRight.add(figure, BorderLayout.WEST);
 		
 		JPanel panelButtonsDays = new JPanel();
-		panelFigure.add(panelButtonsDays, BorderLayout.SOUTH);
+		//panelFigure.add(panelButtonsDays, BorderLayout.SOUTH);
 		panelButtonsDays.setLayout(new GridLayout(0, 7, 0, 0));
 		
 		JButton mondaypanelFigureGridButton = new JButton("Понедельник");
@@ -98,9 +111,9 @@ public class MainWindow {
 		JButton button_5 = new JButton("Воскресение");
 		panelButtonsDays.add(button_5);
 		
-		JPanel panelDays = new JPanel();
-		frame.getContentPane().add(panelDays, BorderLayout.EAST);
-		panelDays.setLayout(new BoxLayout(panelDays, BoxLayout.X_AXIS));
+		JLabel labelFigureName = new JLabel("фигурка");
+		labelFigureName.setHorizontalAlignment(SwingConstants.CENTER);
+		panelRight.add(labelFigureName, BorderLayout.NORTH);
 	}
 	
 	//определяем размеры окна
