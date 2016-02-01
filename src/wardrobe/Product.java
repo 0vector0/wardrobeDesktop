@@ -44,12 +44,14 @@ public class Product {
 
 	Product() {
 		this.name = inputString("Найменование");
-		this.manufacturer = inputString("Производителя");
+		this.manufacturer = inputString("Производитель");
 		this.type = inputString("Тип (штаны, юбка, кофта и т.д.)");
 		this.color = inputString("Цвет вещи");
 		//this.quantity = 0;
 		this.price = inputInt("Цену");
 	}
+	
+	
 
 	Product(String name, String manufacturer, String type, String color, int quantity, double price) {
 		this.name = name;
