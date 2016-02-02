@@ -9,11 +9,42 @@ public class MainPanelTest extends JPanel {
 	private JTextField typeTextField;
 	private JTextField manufacturerTextField;
 	private JTextField priceTextField;
+	private Product product;
+	private WardrobeTest wardrobe;
+
+	public void saveProduct() {
+		// this.product = product;
+		// this.wardrobe = wardrobe;
+		String name = nameTextField.getText();
+		String type = typeTextField.getText();
+		;
+		String manufacturer = manufacturerTextField.getText();
+		double price = Double.parseDouble(priceTextField.getText());
+
+		product = new Product(name, type, manufacturer, price);
+		wardrobe.addProduct(product);
+
+		nameTextField.setText("");
+		typeTextField.setText("");
+		manufacturerTextField.setText("");
+		priceTextField.setText("");
+	}
+
+	public void loadProduct(int count) {
+		product = wardrobe.getProduct(count);
+		nameTextField.setText(product.getName());
+		typeTextField.setText(product.getType());
+		manufacturerTextField.setText(product.getManufacturer());
+		priceTextField.setText(Double.toString(product.getPrice()));
+
+	}
 
 	/**
 	 * Create the panel.
 	 */
-	public MainPanelTest() {
+	public MainPanelTest(Product product, WardrobeTest wardrobe) {
+		this.product = product;
+		this.wardrobe = wardrobe;
 		setLayout(null);
 
 		JLabel nameLabel = new JLabel("name");
