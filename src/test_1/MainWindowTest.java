@@ -17,7 +17,7 @@ public class MainWindowTest {
 	WardrobeTest wardrobe = new WardrobeTest();
 	private MainPanelTest mainPanelTest;;
 	int count = 0;
-	OutSerialize outSerialize = new OutSerialize();
+	OutSerialize2 outSerialize2 = new OutSerialize2();
 
 	/**
 	 * Launch the application.
@@ -85,6 +85,7 @@ public class MainWindowTest {
 				// mainPanelTest.setTypeText("");
 				// mainPanelTest.setManufacturerText("");
 				// mainPanelTest.setPriceTextField(0.0);
+				// System.out.println(wardrobe.toString());
 
 			}
 		});
@@ -104,7 +105,8 @@ public class MainWindowTest {
 		JButton btnSavefile = new JButton("saveFile");
 		btnSavefile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				outSerialize.saveFile(wardrobe);
+				product = wardrobe.getProduct(0);
+				outSerialize2.saveFile(product);
 			}
 		});
 		panel.add(btnSavefile);
@@ -112,10 +114,15 @@ public class MainWindowTest {
 		JButton btnLoadfile = new JButton("loadFile");
 		btnLoadfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				wardrobe = outSerialize.loadFile();
-				mainPanelTest = new MainPanelTest(product, wardrobe);
-				// mainPanelTest.loadProduct(0);
-
+				Product productload = new Product();
+				// WardrobeTest wardrobeload = new WardrobeTest();
+				productload = outSerialize2.loadFile();
+				product = productload;
+				// mainPanelTest.saveProduct();
+				mainPanelTest.loadProduct(product);
+				// product = wardrobe.getProduct(0);
+				// mainPanelTest = new MainPanelTest(product, wardrobe);
+				// System.out.println(wardrobe.toString());
 			}
 		});
 		panel.add(btnLoadfile);

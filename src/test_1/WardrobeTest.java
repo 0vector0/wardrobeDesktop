@@ -32,4 +32,9 @@ public class WardrobeTest implements Serializable {
 		return productList.size();
 	}
 
+	@Override
+	public String toString() {
+		return "WardrobeTest [productList=" + productList + "]";
+	}
+
 }

@@ -40,6 +40,16 @@ public class MainPanelTest extends JPanel {
 
 	}
 
+	public void loadProduct(Product product) {
+		// product = wardrobe.getProduct(count);
+		nameTextField.setText(product.getName());
+		typeTextField.setText(product.getType());
+		manufacturerTextField.setText(product.getManufacturer());
+		priceTextField.setText(Double.toString(product.getPrice()));
+		// numberLabel.setText(String.valueOf(count));
+
+	}
+
 	/**
 	 * Create the panel.
 	 */

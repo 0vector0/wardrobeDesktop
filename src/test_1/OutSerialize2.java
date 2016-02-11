@@ -6,16 +6,16 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class OutSerialize {
+public class OutSerialize2 {
 
 	// private WardrobeTest wardrobe;
 
-	public OutSerialize() {
+	public OutSerialize2() {
 		// this.wardrobe = wardrobe;
 		// TODO Auto-generated constructor stub
 	}
 
-	public void saveFile(WardrobeTest wardrobe) {
+	public void saveFile(Product product) {
 		String filename = "time.ser";
 
 		// wardrobe = new WardrobeTest();
@@ -24,29 +24,30 @@ public class OutSerialize {
 		try {
 			fos = new FileOutputStream(filename);
 			out = new ObjectOutputStream(fos);
-			out.writeObject(wardrobe);
+			out.writeObject(product);
 			out.close();
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
 	}
 
-	public WardrobeTest loadFile() {
+	public Product loadFile() {
 		String filename = "time.ser";
-		WardrobeTest wardrobe = null;
+		Product product = null;
+		// WardrobeTest wardrobe = null;
 		FileInputStream fis = null;
 		ObjectInputStream in = null;
 		try {
 			fis = new FileInputStream(filename);
 			in = new ObjectInputStream(fis);
-			wardrobe = (WardrobeTest) in.readObject();
+			product = (Product) in.readObject();
 			in.close();
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		} catch (ClassNotFoundException ex) {
 			ex.printStackTrace();
 		}
-		wardrobe.toString();
-		return wardrobe;
+		// product.toString();
+		return product;
 	}
 }
