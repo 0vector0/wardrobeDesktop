@@ -1,4 +1,4 @@
-package test;
+package test_1;
 
 public class Accessories extends Product {
 

@@ -1,11 +1,16 @@
-package test;
+package test_1;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class WardrobeTest {
+public class WardrobeTest implements Serializable {
 
-	private ArrayList<Product> productList = new ArrayList<Product>();
+	private ArrayList<Product> productList;
 	private Product product;
+
+	public WardrobeTest() {
+		productList = new ArrayList<Product>();
+	}
 
 	public void addProduct(Product product) {
 		productList.add(product);

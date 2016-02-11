@@ -1,4 +1,4 @@
-package test;
+package test_1;
 
 import java.awt.Container;
 import java.awt.FlowLayout;

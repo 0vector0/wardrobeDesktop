@@ -1,4 +1,4 @@
-package test;
+package test_1;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -8,15 +8,14 @@ import java.io.ObjectOutputStream;
 
 public class OutSerialize {
 
-	private WardrobeTest wardrobe;
+	// private WardrobeTest wardrobe;
 
-	public OutSerialize(WardrobeTest wardrobe) {
-		this.wardrobe = wardrobe;
+	public OutSerialize() {
+		// this.wardrobe = wardrobe;
 		// TODO Auto-generated constructor stub
 	}
 
 	public void saveFile(WardrobeTest wardrobe) {
-
 		String filename = "time.ser";
 
 		wardrobe = new WardrobeTest();

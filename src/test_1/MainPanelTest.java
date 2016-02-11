@@ -1,4 +1,4 @@
-package test;
+package test_1;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,13 +11,13 @@ public class MainPanelTest extends JPanel {
 	private JTextField priceTextField;
 	private Product product;
 	private WardrobeTest wardrobe;
+	private JLabel numberLabel;
 
 	public void saveProduct() {
 		// this.product = product;
 		// this.wardrobe = wardrobe;
 		String name = nameTextField.getText();
 		String type = typeTextField.getText();
-		;
 		String manufacturer = manufacturerTextField.getText();
 		double price = Double.parseDouble(priceTextField.getText());
 
@@ -36,6 +36,7 @@ public class MainPanelTest extends JPanel {
 		typeTextField.setText(product.getType());
 		manufacturerTextField.setText(product.getManufacturer());
 		priceTextField.setText(Double.toString(product.getPrice()));
+		numberLabel.setText(String.valueOf(count));
 
 	}
 
@@ -82,6 +83,10 @@ public class MainPanelTest extends JPanel {
 		priceTextField.setBounds(147, 166, 86, 20);
 		add(priceTextField);
 		priceTextField.setColumns(10);
+
+		numberLabel = new JLabel("numberLabel");
+		numberLabel.setBounds(97, 36, 86, 14);
+		add(numberLabel);
 
 	}
 }

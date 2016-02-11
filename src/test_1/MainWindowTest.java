@@ -1,4 +1,4 @@
-package test;
+package test_1;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -17,6 +17,7 @@ public class MainWindowTest {
 	WardrobeTest wardrobe = new WardrobeTest();
 	private MainPanelTest mainPanelTest;;
 	int count = 0;
+	OutSerialize outSerialize = new OutSerialize();
 
 	/**
 	 * Launch the application.
@@ -99,6 +100,24 @@ public class MainWindowTest {
 			}
 		});
 		panel.add(rightButton);
-	}
 
+		JButton btnSavefile = new JButton("saveFile");
+		btnSavefile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				outSerialize.saveFile(wardrobe);
+			}
+		});
+		panel.add(btnSavefile);
+
+		JButton btnLoadfile = new JButton("loadFile");
+		btnLoadfile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				wardrobe = outSerialize.loadFile();
+				mainPanelTest = new MainPanelTest(product, wardrobe);
+				// mainPanelTest.loadProduct(0);
+
+			}
+		});
+		panel.add(btnLoadfile);
+	}
 }
