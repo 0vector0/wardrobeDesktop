@@ -20,7 +20,7 @@ public class OutSerialize {
 		String filename = "productList.txt";
 
 		// wardrobe = new WardrobeTest();
-		// ArrayList<Product> productList = new ArrayList<Product>();
+		// ArrayList<Product> productList = null;
 		FileOutputStream fos = null;
 		ObjectOutputStream out = null;
 		try {
@@ -45,8 +45,10 @@ public class OutSerialize {
 			productList = (ArrayList<Product>) in.readObject();
 			in.close();
 		} catch (IOException ex) {
+			System.out.println("Нет файла");
 			ex.printStackTrace();
 		} catch (ClassNotFoundException ex) {
+			System.out.println("Неверный формат файла  ");
 			ex.printStackTrace();
 		}
 		// productList.toString();
