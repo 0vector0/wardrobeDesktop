@@ -24,9 +24,9 @@ public class WardrobeTest implements Serializable {
 
 	}
 
-	public ArrayList<Product> getProductlist() {
-		return productList;
-	}
+	// public ArrayList<Product> getProductlist() {
+	// return productList;
+	// }
 
 	public int getSizeProductList() {
 		return productList.size();
@@ -35,6 +35,14 @@ public class WardrobeTest implements Serializable {
 	@Override
 	public String toString() {
 		return "WardrobeTest [productList=" + productList + "]";
+	}
+
+	public ArrayList<Product> getProductList() {
+		return productList;
+	}
+
+	public void setProductList(ArrayList<Product> productList) {
+		this.productList = productList;
 	}
 
 }

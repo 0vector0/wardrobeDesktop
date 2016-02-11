@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,9 +16,11 @@ public class MainWindowTest {
 
 	Product product;
 	WardrobeTest wardrobe = new WardrobeTest();
+	private ArrayList<Product> productList;
 	private MainPanelTest mainPanelTest;;
 	int count = 0;
 	OutSerialize2 outSerialize2 = new OutSerialize2();
+	OutSerialize outSerialize = new OutSerialize();
 
 	/**
 	 * Launch the application.
@@ -46,6 +49,7 @@ public class MainWindowTest {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		// productList = wardrobe.getProductList();
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -72,20 +76,8 @@ public class MainWindowTest {
 		saveButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				// String name = mainPanelTest.getNameText();
-				// String type = mainPanelTest.getTypeText();
-				// String manufacturer = mainPanelTest.getManufacturerText();
-				// double price = mainPanelTest.getPrice();
-				//
-				// product = new Product(name, type, manufacturer, price);
-				// wardrobe.addProduct(product);
 				mainPanelTest.saveProduct();
 				count++;
-				// mainPanelTest.setNameText("");
-				// mainPanelTest.setTypeText("");
-				// mainPanelTest.setManufacturerText("");
-				// mainPanelTest.setPriceTextField(0.0);
-				// System.out.println(wardrobe.toString());
 
 			}
 		});
@@ -105,8 +97,9 @@ public class MainWindowTest {
 		JButton btnSavefile = new JButton("saveFile");
 		btnSavefile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				product = wardrobe.getProduct(0);
-				outSerialize2.saveFile(product);
+				// product = wardrobe.getProduct(0);
+				outSerialize.saveFile(wardrobe.getProductList());
+
 			}
 		});
 		panel.add(btnSavefile);
@@ -114,12 +107,14 @@ public class MainWindowTest {
 		JButton btnLoadfile = new JButton("loadFile");
 		btnLoadfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Product productload = new Product();
+				// Product productload = new Product();
 				// WardrobeTest wardrobeload = new WardrobeTest();
-				productload = outSerialize2.loadFile();
-				product = productload;
+				// productload = outSerialize2.loadFile();
+				// product = productload;
 				// mainPanelTest.saveProduct();
-				mainPanelTest.loadProduct(product);
+				wardrobe.setProductList(outSerialize.loadFile());
+				mainPanelTest.loadProduct(0);
+				// mainPanelTest.loadProduct(product);
 				// product = wardrobe.getProduct(0);
 				// mainPanelTest = new MainPanelTest(product, wardrobe);
 				// System.out.println(wardrobe.toString());
