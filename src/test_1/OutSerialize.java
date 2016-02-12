@@ -16,7 +16,7 @@ public class OutSerialize {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void saveFile(ArrayList<Product> productList) {
+	static public void saveFile(ArrayList<Product> productList) {
 		String filename = "productList.txt";
 
 		// wardrobe = new WardrobeTest();
@@ -33,7 +33,7 @@ public class OutSerialize {
 		}
 	}
 
-	public ArrayList<Product> loadFile() {
+	static public ArrayList<Product> loadFile() {
 		String filename = "productList.txt";
 		// WardrobeTest wardrobe = null;
 		ArrayList<Product> productList = null;

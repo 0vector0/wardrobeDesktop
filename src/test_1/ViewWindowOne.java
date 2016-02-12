@@ -6,9 +6,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class ViewWindowOne {
+public class ViewWindowOne extends JFrame {
 
-	private JFrame frame;
+	// private JFrame frame;
 
 	Product product;
 	ModelWardrobe wardrobe = new ModelWardrobe();
@@ -21,8 +21,8 @@ public class ViewWindowOne {
 	JButton leftButton;
 	JButton rightButton;
 	JButton saveButton;
-	JButton savefileButton;
-	JButton loadfileButton;
+	JButton saveFileButton;
+	JButton loadFileButton;
 
 	/**
 	 * Launch the application.
@@ -52,15 +52,15 @@ public class ViewWindowOne {
 	 */
 	private void initialize() {
 		// productList = wardrobe.getProductList();
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// frame = new JFrame();
+		setBounds(100, 100, 450, 300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		mainPanelWindowOne = new MainPanelWindowOne(/* product, wardrobe */);
-		frame.getContentPane().add(mainPanelWindowOne, BorderLayout.CENTER);
+		getContentPane().add(mainPanelWindowOne, BorderLayout.CENTER);
 
 		JPanel panel = new JPanel();
-		frame.getContentPane().add(panel, BorderLayout.SOUTH);
+		getContentPane().add(panel, BorderLayout.SOUTH);
 
 		leftButton = new JButton("<");
 		// leftButton.addActionListener(new ActionListener() {
@@ -96,23 +96,23 @@ public class ViewWindowOne {
 		// });
 		panel.add(saveButton);
 
-		savefileButton = new JButton("saveFile");
+		saveFileButton = new JButton("saveFile");
 		// savefileButton.addActionListener(new ActionListener() {
 		// public void actionPerformed(ActionEvent e) {
 		// outSerialize.saveFile(wardrobe.getProductList());
 		//
 		// }
 		// });
-		panel.add(savefileButton);
+		panel.add(saveFileButton);
 
-		loadfileButton = new JButton("loadFile");
+		loadFileButton = new JButton("loadFile");
 		// loadfileButton.addActionListener(new ActionListener() {
 		// public void actionPerformed(ActionEvent e) {
 		// wardrobe.setProductList(outSerialize.loadFile());
 		// // mainPanelWindowOne.loadProduct(0);
 		// }
 		// });
-		panel.add(loadfileButton);
+		panel.add(loadFileButton);
 	}
 
 	public void registerLeftButton(ControllerWindowOne controllerWindowOne) {
@@ -131,21 +131,21 @@ public class ViewWindowOne {
 	}
 
 	public void registerSaveFileButton(ControllerWindowOne controllerWindowOne) {
-		savefileButton.setActionCommand("saveFileProduct"); // устанавливаю
+		saveFileButton.setActionCommand("saveFileProduct"); // устанавливаю
 															// команду
 															// для
-		savefileButton.addActionListener(controllerWindowOne);
+		saveFileButton.addActionListener(controllerWindowOne);
 	}
 
 	public void registerLoadFileButton(ControllerWindowOne controllerWindowOne) {
-		loadfileButton.setActionCommand("loadFileProduct"); // устанавливаю
+		loadFileButton.setActionCommand("loadFileProduct"); // устанавливаю
 															// команду
 															// для
-		loadfileButton.addActionListener(controllerWindowOne);
+		loadFileButton.addActionListener(controllerWindowOne);
 	}
 
 	public void activate() {
-		frame.setVisible(true);
+		setVisible(true);
 
 	}
 

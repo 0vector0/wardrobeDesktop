@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 public class ControllerWindowOne implements ActionListener {
 
 	private int count = 0;
-	private OutSerialize outSerialize = new OutSerialize();
+	// private OutSerialize outSerialize = new OutSerialize();
 
 	private ModelWardrobe modelWardrobe = new ModelWardrobe();
 	private ViewWindowOne viewWindowOne;
@@ -42,12 +42,14 @@ public class ControllerWindowOne implements ActionListener {
 		}
 		if (e.getActionCommand().equals("saveFileProduct")) {
 			System.out.println("saveFileProduct");
-			outSerialize.saveFile(modelWardrobe.getProductList());
+			// outSerialize.saveFile(modelWardrobe.getProductList());
+			OutSerialize.saveFile(modelWardrobe.getProductList());
 			return;
 		}
 		if (e.getActionCommand().equals("loadFileProduct")) {
 			System.out.println("loadFileProduct");
-			modelWardrobe.setProductList(outSerialize.loadFile());
+			// modelWardrobe.setProductList(outSerialize.loadFile());
+			modelWardrobe.setProductList(OutSerialize.loadFile());
 			viewWindowOne.loadProduct(modelWardrobe.getProduct(0));
 			return;
 		}
