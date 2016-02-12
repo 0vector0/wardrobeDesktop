@@ -1,8 +1,6 @@
 package test_1;
 
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -23,8 +21,8 @@ public class ViewWindowOne {
 	JButton leftButton;
 	JButton rightButton;
 	JButton saveButton;
-	JButton btnSavefile;
-	JButton btnLoadfile;
+	JButton savefileButton;
+	JButton loadfileButton;
 
 	/**
 	 * Launch the application.
@@ -58,7 +56,7 @@ public class ViewWindowOne {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		mainPanelWindowOne = new MainPanelWindowOne(product, wardrobe);
+		mainPanelWindowOne = new MainPanelWindowOne(/* product, wardrobe */);
 		frame.getContentPane().add(mainPanelWindowOne, BorderLayout.CENTER);
 
 		JPanel panel = new JPanel();
@@ -98,23 +96,23 @@ public class ViewWindowOne {
 		// });
 		panel.add(saveButton);
 
-		btnSavefile = new JButton("saveFile");
-		btnSavefile.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				outSerialize.saveFile(wardrobe.getProductList());
+		savefileButton = new JButton("saveFile");
+		// savefileButton.addActionListener(new ActionListener() {
+		// public void actionPerformed(ActionEvent e) {
+		// outSerialize.saveFile(wardrobe.getProductList());
+		//
+		// }
+		// });
+		panel.add(savefileButton);
 
-			}
-		});
-		panel.add(btnSavefile);
-
-		btnLoadfile = new JButton("loadFile");
-		btnLoadfile.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				wardrobe.setProductList(outSerialize.loadFile());
-				mainPanelWindowOne.loadProduct(0);
-			}
-		});
-		panel.add(btnLoadfile);
+		loadfileButton = new JButton("loadFile");
+		// loadfileButton.addActionListener(new ActionListener() {
+		// public void actionPerformed(ActionEvent e) {
+		// wardrobe.setProductList(outSerialize.loadFile());
+		// // mainPanelWindowOne.loadProduct(0);
+		// }
+		// });
+		panel.add(loadfileButton);
 	}
 
 	public void registerLeftButton(ControllerWindowOne controllerWindowOne) {
@@ -130,6 +128,20 @@ public class ViewWindowOne {
 	public void registerSaveButton(ControllerWindowOne controllerWindowOne) {
 		saveButton.setActionCommand("saveProduct"); // устанавливаю команду для
 		saveButton.addActionListener(controllerWindowOne);
+	}
+
+	public void registerSaveFileButton(ControllerWindowOne controllerWindowOne) {
+		savefileButton.setActionCommand("saveFileProduct"); // устанавливаю
+															// команду
+															// для
+		savefileButton.addActionListener(controllerWindowOne);
+	}
+
+	public void registerLoadFileButton(ControllerWindowOne controllerWindowOne) {
+		loadfileButton.setActionCommand("loadFileProduct"); // устанавливаю
+															// команду
+															// для
+		loadfileButton.addActionListener(controllerWindowOne);
 	}
 
 	public void activate() {
