@@ -9,8 +9,6 @@ public class MainPanelWindowOne extends JPanel {
 	private JTextField typeTextField;
 	private JTextField manufacturerTextField;
 	private JTextField priceTextField;
-	// private Product product;
-	// private ModelWardrobe modelWardrobe;
 	private JLabel numberLabel;
 
 	public void saveProduct(ModelWardrobe modelWardrobe) {
@@ -29,18 +27,7 @@ public class MainPanelWindowOne extends JPanel {
 		priceTextField.setText("");
 	}
 
-	// public void loadProduct(int count) {
-	// product = modelWardrobe.getProduct(count);
-	// nameTextField.setText(product.getName());
-	// typeTextField.setText(product.getType());
-	// manufacturerTextField.setText(product.getManufacturer());
-	// priceTextField.setText(Double.toString(product.getPrice()));
-	// numberLabel.setText(String.valueOf(count));
-	//
-	// }
-
 	public void loadProduct(Product product) {
-		// numberLabel.setText(String.valueOf(b));
 		nameTextField.setText(product.getName());
 		typeTextField.setText(product.getType());
 		manufacturerTextField.setText(product.getManufacturer());
@@ -52,8 +39,7 @@ public class MainPanelWindowOne extends JPanel {
 	 * Create the panel.
 	 */
 	public MainPanelWindowOne() {
-		// this.product = product;
-		// this.modelWardrobe = wardrobe;
+
 		setLayout(null);
 
 		JLabel nameLabel = new JLabel("name");

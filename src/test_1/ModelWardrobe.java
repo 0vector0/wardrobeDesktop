@@ -17,24 +17,12 @@ public class ModelWardrobe implements Serializable {
 	}
 
 	public Product getProduct(int i) {
-
 		product = productList.get(i);
-
 		return product;
-
 	}
-
-	// public ArrayList<Product> getProductlist() {
-	// return productList;
-	// }
 
 	public int getSizeProductList() {
 		return productList.size();
-	}
-
-	@Override
-	public String toString() {
-		return "WardrobeTest [productList=" + productList + "]";
 	}
 
 	public ArrayList<Product> getProductList() {
