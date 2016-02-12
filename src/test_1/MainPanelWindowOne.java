@@ -4,25 +4,24 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class MainPanelTest extends JPanel {
+public class MainPanelWindowOne extends JPanel {
 	private JTextField nameTextField;
 	private JTextField typeTextField;
 	private JTextField manufacturerTextField;
 	private JTextField priceTextField;
 	private Product product;
-	private WardrobeTest wardrobe;
+	private ModelWardrobe modelWardrobe;
 	private JLabel numberLabel;
 
-	public void saveProduct() {
-		// this.product = product;
-		// this.wardrobe = wardrobe;
+	public void saveProduct(ModelWardrobe modelWardrobe) {
+
 		String name = nameTextField.getText();
 		String type = typeTextField.getText();
 		String manufacturer = manufacturerTextField.getText();
 		double price = Double.parseDouble(priceTextField.getText());
 
 		product = new Product(name, type, manufacturer, price);
-		wardrobe.addProduct(product);
+		modelWardrobe.addProduct(product);
 
 		nameTextField.setText("");
 		typeTextField.setText("");
@@ -31,7 +30,7 @@ public class MainPanelTest extends JPanel {
 	}
 
 	public void loadProduct(int count) {
-		product = wardrobe.getProduct(count);
+		product = modelWardrobe.getProduct(count);
 		nameTextField.setText(product.getName());
 		typeTextField.setText(product.getType());
 		manufacturerTextField.setText(product.getManufacturer());
@@ -41,21 +40,19 @@ public class MainPanelTest extends JPanel {
 	}
 
 	public void loadProduct(Product product) {
-		// product = wardrobe.getProduct(count);
 		nameTextField.setText(product.getName());
 		typeTextField.setText(product.getType());
 		manufacturerTextField.setText(product.getManufacturer());
 		priceTextField.setText(Double.toString(product.getPrice()));
-		// numberLabel.setText(String.valueOf(count));
 
 	}
 
 	/**
 	 * Create the panel.
 	 */
-	public MainPanelTest(Product product, WardrobeTest wardrobe) {
+	public MainPanelWindowOne(Product product, ModelWardrobe wardrobe) {
 		this.product = product;
-		this.wardrobe = wardrobe;
+		this.modelWardrobe = wardrobe;
 		setLayout(null);
 
 		JLabel nameLabel = new JLabel("name");
