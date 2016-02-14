@@ -6,10 +6,18 @@ public class MVC_swing {
 		ModelWardrobe modelWardrobe = new ModelWardrobe();
 		ViewWindowOne view = new ViewWindowOne();
 		ControllerWindowOne controllerWindowOne = new ControllerWindowOne(modelWardrobe, view);
-		controllerWindowOne.startApp();
+		// controllerWindowOne.startApp();
 
 		ViewProductList viewProductList = new ViewProductList();
 		ControllerProductList controllerProductList = new ControllerProductList(modelWardrobe, viewProductList);
-		controllerProductList.startApp();
+		// controllerProductList.startApp();
+
+		ViewCurrentDay viewCurrentDay = new ViewCurrentDay();
+		ControllerCurrentDay controllerCurrentDay = new ControllerCurrentDay(viewCurrentDay);
+		controllerCurrentDay.startApp();
+
+		FramesController controller = new FramesController(controllerCurrentDay);
+		// controller.start();
+
 	}
 }
