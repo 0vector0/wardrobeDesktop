@@ -16,9 +16,9 @@ public class ViewProductList extends View implements ViewInterface {
 	// private JPanel contentPane;
 	private JList<String> list;
 	private DefaultListModel<String> listModel;
-	JButton saveProductList;
-	JButton loadProductList;
-	JButton newProductButton;
+	private JButton saveProductList;
+	private JButton loadProductList;
+	private JButton newProductButton;
 	private JButton backButton;
 
 	/**

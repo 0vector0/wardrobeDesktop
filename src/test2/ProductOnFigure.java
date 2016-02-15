@@ -1,4 +1,4 @@
-package gui;
+package test2;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;

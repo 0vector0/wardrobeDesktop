@@ -1,4 +1,4 @@
-package mvc;
+package test2;
 
 public class MVC_swing {
 	public static void main(String[] args) {

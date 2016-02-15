@@ -1,4 +1,4 @@
-package gui;
+package test2;
 
 import java.awt.Dimension;
 import java.awt.EventQueue;

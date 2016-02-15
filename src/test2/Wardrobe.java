@@ -1,4 +1,4 @@
-import gui.MainWindow;
+package test2;
 
 public class Wardrobe {
 

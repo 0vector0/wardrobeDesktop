@@ -1,4 +1,4 @@
-package mvc;
+package test2;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

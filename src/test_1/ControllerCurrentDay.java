@@ -6,7 +6,7 @@ import java.util.Observable;
 
 public class ControllerCurrentDay extends Observable implements ActionListener, ControllerInterface {
 
-	ViewCurrentDay viewCurrentDay = new ViewCurrentDay();
+	private ViewCurrentDay viewCurrentDay = new ViewCurrentDay();
 
 	public ControllerCurrentDay(ViewCurrentDay viewCurrentDay) {
 		this.viewCurrentDay = viewCurrentDay;
