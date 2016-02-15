@@ -82,14 +82,6 @@ public class ViewCurrentDay extends JFrame implements VievInterface {
 		setVisible(false);
 	}
 
-	// public void registerController(ControllerCurrentDay controllerCurrentDay)
-	// {
-	// wardrobeButton.setActionCommand("openViewProductList"); // устанавливаю
-	// // команду
-	// // для
-	// wardrobeButton.addActionListener(controllerCurrentDay);
-	// }
-
 	@Override
 	public void registerController(ControllerInterface controllerInterface) {
 

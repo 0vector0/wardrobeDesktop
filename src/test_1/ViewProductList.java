@@ -12,7 +12,7 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class ViewProductList extends JFrame {
+public class ViewProductList extends JFrame implements VievInterface {
 
 	private JPanel contentPane;
 	private JList<String> list;
@@ -81,10 +81,6 @@ public class ViewProductList extends JFrame {
 		panelButton.add(newProductButton);
 	}
 
-	public void activate() {
-		setVisible(true);
-	}
-
 	public void registerSaveProductList(ControllerProductList controllerProductList) {
 		saveProductList.setActionCommand("saveProductList"); // устанавливаю
 																// команду
@@ -118,6 +114,22 @@ public class ViewProductList extends JFrame {
 		// listModel.addElement("test");
 		// list.add("test");
 
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void activate() {
+		setVisible(true);
+	}
+
+	@Override
+	public void deActivate() {
+		setVisible(false);
+	}
+
+	@Override
+	public void registerController(ControllerInterface controllerInterface) {
 		// TODO Auto-generated method stub
 
 	}

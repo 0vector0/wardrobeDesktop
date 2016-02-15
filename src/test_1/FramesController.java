@@ -9,17 +9,19 @@ public class FramesController implements Observer {
 	ControllerProductList controllerProductList;
 	ControllerCurrentDay controllerCurrentDay;
 	ModelWardrobe modelWardrobe;
-	ViewProduct view;
+	ViewProduct viewProduct;
 	ViewProductList viewProductList;
 	ViewCurrentDay viewCurrentDay;
 
 	public FramesController() {
-
 		modelWardrobe = new ModelWardrobe();
-		view = new ViewProduct();
-		controllerProduct = new ControllerProduct(modelWardrobe, view);
+
+		viewProduct = new ViewProduct();
+		controllerProduct = new ControllerProduct(modelWardrobe, viewProduct);
+
 		viewProductList = new ViewProductList();
 		controllerProductList = new ControllerProductList(modelWardrobe, viewProductList);
+
 		viewCurrentDay = new ViewCurrentDay();
 		controllerCurrentDay = new ControllerCurrentDay(viewCurrentDay);
 	}

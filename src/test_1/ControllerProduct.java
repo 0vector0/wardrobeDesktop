@@ -3,7 +3,7 @@ package test_1;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ControllerProduct implements ActionListener {
+public class ControllerProduct implements ActionListener, ControllerInterface {
 
 	private int count = 0;
 	// private OutSerialize outSerialize = new OutSerialize();
@@ -55,7 +55,7 @@ public class ControllerProduct implements ActionListener {
 		}
 	}
 
-	void startApp() {
+	public void startApp() {
 		viewProduct.registerLeftButton(this);
 		viewProduct.registerRightButton(this);
 		viewProduct.registerSaveButton(this);
@@ -63,5 +63,19 @@ public class ControllerProduct implements ActionListener {
 		viewProduct.registerLoadFileButton(this);
 
 		viewProduct.activate(); // отображает окно
+	}
+
+	@Override
+	public void showFrame() {
+		viewProduct.activate();
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void hideFrame() {
+		viewProduct.deActivate();
+		// TODO Auto-generated method stub
+
 	}
 }

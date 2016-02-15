@@ -6,7 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class ViewProduct extends JFrame {
+public class ViewProduct extends JFrame implements VievInterface {
 
 	// private JFrame frame;
 
@@ -144,17 +144,28 @@ public class ViewProduct extends JFrame {
 		loadFileButton.addActionListener(controllerProduct);
 	}
 
-	public void activate() {
-		setVisible(true);
-
-	}
-
 	public void loadProduct(Product product) {
 		mainPanelWindowOne.loadProduct(product);
 	}
 
 	public void saveProduct(ModelWardrobe modelWardrobe) {
 		mainPanelWindowOne.saveProduct(modelWardrobe);
+
+	}
+
+	@Override
+	public void activate() {
+		setVisible(true);
+	}
+
+	@Override
+	public void deActivate() {
+		setVisible(false);
+	}
+
+	@Override
+	public void registerController(ControllerInterface controllerInterface) {
+		// TODO Auto-generated method stub
 
 	}
 
