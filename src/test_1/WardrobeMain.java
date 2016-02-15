@@ -1,6 +1,6 @@
 package test_1;
 
-public class MVC_swing {
+public class WardrobeMain {
 	public static void main(String[] args) {
 
 		FramesController controller = new FramesController();

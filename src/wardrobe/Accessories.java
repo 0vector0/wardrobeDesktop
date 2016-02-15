@@ -1,4 +1,6 @@
-package test_1;
+package wardrobe;
+
+import test_1.Product;
 
 public class Accessories extends Product {
 

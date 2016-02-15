@@ -1,7 +1,9 @@
-package test_1;
+package wardrobe;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+
+import test_1.Product;
 
 public class ModelWardrobe implements Serializable {
 

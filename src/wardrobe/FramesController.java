@@ -1,4 +1,4 @@
-package test_1;
+package wardrobe;
 
 import java.util.Observable;
 import java.util.Observer;

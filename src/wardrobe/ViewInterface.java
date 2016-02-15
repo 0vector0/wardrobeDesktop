@@ -1,4 +1,4 @@
-package test_1;
+package wardrobe;
 
 public interface ViewInterface {
 	public void activate();

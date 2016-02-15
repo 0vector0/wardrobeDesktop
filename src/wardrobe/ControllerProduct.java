@@ -1,4 +1,4 @@
-package test_1;
+package wardrobe;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

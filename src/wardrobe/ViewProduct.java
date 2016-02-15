@@ -1,9 +1,11 @@
-package test_1;
+package wardrobe;
 
 import java.awt.BorderLayout;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import test_1.Product;
 
 public class ViewProduct extends View {
 

@@ -1,4 +1,4 @@
-package test_1;
+package wardrobe;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+
+import test_1.Product;
 
 public class ViewProductList extends View implements ViewInterface {
 

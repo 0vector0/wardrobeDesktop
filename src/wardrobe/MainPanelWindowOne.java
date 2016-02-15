@@ -1,8 +1,10 @@
-package test_1;
+package wardrobe;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import test_1.Product;
 
 public class MainPanelWindowOne extends JPanel {
 	private JTextField nameTextField;
