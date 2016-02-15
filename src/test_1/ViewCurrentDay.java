@@ -6,15 +6,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
 
-public class ViewCurrentDay extends JFrame implements ViewInterface {
+public class ViewCurrentDay extends View {
 
-	private JPanel contentPane;
+	// private JPanel contentPane;
 	private JButton wardrobeButton;
 
 	// /**
@@ -37,12 +35,13 @@ public class ViewCurrentDay extends JFrame implements ViewInterface {
 	 * Create the frame.
 	 */
 	public ViewCurrentDay() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
+		super();
+		// setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// setBounds(100, 100, 450, 300);
+		// contentPane = new JPanel();
+		// contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		// contentPane.setLayout(new BorderLayout(0, 0));
+		// setContentPane(contentPane);
 
 		JLabel label = new JLabel("Текущий день");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -74,21 +73,21 @@ public class ViewCurrentDay extends JFrame implements ViewInterface {
 		panelButton.add(wardrobeButton, BorderLayout.CENTER);
 	}
 
-	public void activate() {
-		setVisible(true);
-	}
-
-	public void deActivate() {
-		setVisible(false);
-	}
+	// @Override
+	// public void activate() {
+	// setVisible(true);
+	// }
+	//
+	// @Override
+	// public void deActivate() {
+	// setVisible(false);
+	// }
 
 	@Override
 	public void registerController(ControllerInterface controllerInterface) {
 
 		wardrobeButton.setActionCommand("openViewProductList");
 		wardrobeButton.addActionListener((ActionListener) controllerInterface);
-		// TODO Auto-generated method stub
 
 	}
-
 }

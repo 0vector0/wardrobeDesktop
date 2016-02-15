@@ -34,15 +34,11 @@ public class FramesController implements Observer {
 
 	void start() {
 		controllerCurrentDay.startApp();
-		// controllerProduct.startApp();
-		controllerProductList.startApp();
-	}
 
-	// void startControllerCurrentDay() {
-	// controllerCurrentDay.startApp();
-	// // controllerWindowOne.startApp();
-	// /// controllerProductList.startApp();
-	// }
+		controllerProductList.startApp();
+
+		controllerProduct.startApp();
+	}
 
 	@Override
 	public void update(Observable o, Object arg) {

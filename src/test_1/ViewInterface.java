@@ -5,5 +5,5 @@ public interface ViewInterface {
 
 	public void deActivate();
 
-	public void registerController(ControllerInterface controllerInterface);
+	abstract public void registerController(ControllerInterface controllerInterface);
 }

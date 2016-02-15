@@ -3,42 +3,17 @@ package test_1;
 import java.awt.BorderLayout;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class ViewProduct extends JFrame implements ViewInterface {
+public class ViewProduct extends View {
 
-	// private JFrame frame;
-
-	Product product;
-	ModelWardrobe wardrobe = new ModelWardrobe();
-	// private ArrayList<Product> productList;
 	private MainPanelWindowOne mainPanelWindowOne;;
-	int count = 0;
-	OutSerialize2 outSerialize2 = new OutSerialize2();
-	OutSerialize outSerialize = new OutSerialize();
 
-	JButton leftButton;
-	JButton rightButton;
-	JButton saveButton;
-	JButton saveFileButton;
-	JButton loadFileButton;
-
-	/**
-	 * Launch the application.
-	 */
-	// public static void main(String[] args) {
-	// EventQueue.invokeLater(new Runnable() {
-	// public void run() {
-	// try {
-	// ViewWindowOne window = new ViewWindowOne();
-	// window.frame.setVisible(true);
-	// } catch (Exception e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// });
-	// }
+	private JButton leftButton;
+	private JButton rightButton;
+	private JButton saveButton;
+	private JButton saveFileButton;
+	private JButton loadFileButton;
 
 	/**
 	 * Create the application.
@@ -53,8 +28,8 @@ public class ViewProduct extends JFrame implements ViewInterface {
 	private void initialize() {
 		// productList = wardrobe.getProductList();
 		// frame = new JFrame();
-		setBounds(100, 100, 450, 300);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// setBounds(100, 100, 450, 300);
+		// setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		mainPanelWindowOne = new MainPanelWindowOne(/* product, wardrobe */);
 		getContentPane().add(mainPanelWindowOne, BorderLayout.CENTER);
@@ -153,15 +128,15 @@ public class ViewProduct extends JFrame implements ViewInterface {
 
 	}
 
-	@Override
-	public void activate() {
-		setVisible(true);
-	}
-
-	@Override
-	public void deActivate() {
-		setVisible(false);
-	}
+	// @Override
+	// public void activate() {
+	// setVisible(true);
+	// }
+	//
+	// @Override
+	// public void deActivate() {
+	// setVisible(false);
+	// }
 
 	@Override
 	public void registerController(ControllerInterface controllerInterface) {

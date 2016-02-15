@@ -7,15 +7,13 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 
-public class ViewProductList extends JFrame implements ViewInterface {
+public class ViewProductList extends View implements ViewInterface {
 
-	private JPanel contentPane;
+	// private JPanel contentPane;
 	private JList<String> list;
 	private DefaultListModel<String> listModel;
 	JButton saveProductList;
@@ -43,12 +41,12 @@ public class ViewProductList extends JFrame implements ViewInterface {
 	 * Create the frame.
 	 */
 	public ViewProductList() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(600, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
+		// setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// setBounds(600, 100, 450, 300);
+		// contentPane = new JPanel();
+		// contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		// contentPane.setLayout(new BorderLayout(0, 0));
+		// setContentPane(contentPane);
 
 		JPanel panelList = new JPanel();
 		contentPane.add(panelList, BorderLayout.CENTER);
@@ -124,15 +122,15 @@ public class ViewProductList extends JFrame implements ViewInterface {
 
 	}
 
-	@Override
-	public void activate() {
-		setVisible(true);
-	}
-
-	@Override
-	public void deActivate() {
-		setVisible(false);
-	}
+	// @Override
+	// public void activate() {
+	// setVisible(true);
+	// }
+	//
+	// @Override
+	// public void deActivate() {
+	// setVisible(false);
+	// }
 
 	@Override
 	public void registerController(ControllerInterface controllerInterface) {
