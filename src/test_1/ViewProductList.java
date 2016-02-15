@@ -13,7 +13,7 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class ViewProductList extends JFrame implements VievInterface {
+public class ViewProductList extends JFrame implements ViewInterface {
 
 	private JPanel contentPane;
 	private JList<String> list;

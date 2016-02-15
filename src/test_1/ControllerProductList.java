@@ -22,7 +22,6 @@ public class ControllerProductList extends Observable implements ActionListener,
 		viewProductList.registerSaveProductList(this);
 		viewProductList.registerLoadProductList(this);
 		viewProductList.registerController(this);
-
 	}
 
 	@Override
@@ -50,7 +49,6 @@ public class ControllerProductList extends Observable implements ActionListener,
 			// outSerialize.saveFile(modelWardrobe.getProductList());
 			return;
 		}
-
 	}
 
 	@Override

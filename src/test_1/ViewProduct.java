@@ -6,7 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class ViewProduct extends JFrame implements VievInterface {
+public class ViewProduct extends JFrame implements ViewInterface {
 
 	// private JFrame frame;
 

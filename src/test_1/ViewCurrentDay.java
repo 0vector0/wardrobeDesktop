@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-public class ViewCurrentDay extends JFrame implements VievInterface {
+public class ViewCurrentDay extends JFrame implements ViewInterface {
 
 	private JPanel contentPane;
 	private JButton wardrobeButton;

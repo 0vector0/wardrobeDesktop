@@ -1,6 +1,6 @@
 package test_1;
 
-public interface VievInterface {
+public interface ViewInterface {
 	public void activate();
 
 	public void deActivate();
