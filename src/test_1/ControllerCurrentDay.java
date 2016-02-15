@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
 
-public class ControllerCurrentDay extends Observable implements ActionListener {
+public class ControllerCurrentDay extends Observable implements ActionListener, ControllerInterface {
 
 	ViewCurrentDay viewCurrentDay = new ViewCurrentDay();
 
@@ -26,19 +26,21 @@ public class ControllerCurrentDay extends Observable implements ActionListener {
 
 	}
 
+	@Override
 	public void startApp() {
-		viewCurrentDay.registerSaveProductList(this);
+		viewCurrentDay.registerController(this);
 		viewCurrentDay.activate();
-
-		// TODO Auto-generated method stub
 
 	}
 
+	@Override
 	public void showFrame() {
 		viewCurrentDay.activate();
 	}
 
+	@Override
 	public void hideFrame() {
 		viewCurrentDay.deActivate();
 	}
+
 }

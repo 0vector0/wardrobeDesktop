@@ -1,6 +1,7 @@
 package test_1;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -11,7 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-public class ViewCurrentDay extends JFrame {
+public class ViewCurrentDay extends JFrame implements VievInterface {
 
 	private JPanel contentPane;
 	private JButton wardrobeButton;
@@ -81,11 +82,23 @@ public class ViewCurrentDay extends JFrame {
 		setVisible(false);
 	}
 
-	public void registerSaveProductList(ControllerCurrentDay controllerCurrentDay) {
+	// public void registerController(ControllerCurrentDay controllerCurrentDay)
+	// {
+	// wardrobeButton.setActionCommand("openViewProductList"); // устанавливаю
+	// // команду
+	// // для
+	// wardrobeButton.addActionListener(controllerCurrentDay);
+	// }
+
+	@Override
+	public void registerController(ControllerInterface controllerInterface) {
+
 		wardrobeButton.setActionCommand("openViewProductList"); // устанавливаю
-																// команду
-																// для
-		wardrobeButton.addActionListener(controllerCurrentDay);
+		// команду
+		// для
+		wardrobeButton.addActionListener((ActionListener) controllerInterface);
+		// TODO Auto-generated method stub
+
 	}
 
 }
