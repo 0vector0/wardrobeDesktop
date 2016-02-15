@@ -6,7 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class ViewWindowOne extends JFrame {
+public class ViewProduct extends JFrame {
 
 	// private JFrame frame;
 
@@ -43,7 +43,7 @@ public class ViewWindowOne extends JFrame {
 	/**
 	 * Create the application.
 	 */
-	public ViewWindowOne() {
+	public ViewProduct() {
 		initialize();
 	}
 
@@ -115,33 +115,33 @@ public class ViewWindowOne extends JFrame {
 		panel.add(loadFileButton);
 	}
 
-	public void registerLeftButton(ControllerWindowOne controllerWindowOne) {
+	public void registerLeftButton(ControllerProduct controllerProduct) {
 		leftButton.setActionCommand("<-"); // устанавливаю команду для
-		leftButton.addActionListener(controllerWindowOne);
+		leftButton.addActionListener(controllerProduct);
 	}
 
-	public void registerRightButton(ControllerWindowOne controllerWindowOne) {
+	public void registerRightButton(ControllerProduct controllerProduct) {
 		rightButton.setActionCommand("->"); // устанавливаю команду для
-		rightButton.addActionListener(controllerWindowOne);
+		rightButton.addActionListener(controllerProduct);
 	}
 
-	public void registerSaveButton(ControllerWindowOne controllerWindowOne) {
+	public void registerSaveButton(ControllerProduct controllerProduct) {
 		saveButton.setActionCommand("saveProduct"); // устанавливаю команду для
-		saveButton.addActionListener(controllerWindowOne);
+		saveButton.addActionListener(controllerProduct);
 	}
 
-	public void registerSaveFileButton(ControllerWindowOne controllerWindowOne) {
+	public void registerSaveFileButton(ControllerProduct controllerProduct) {
 		saveFileButton.setActionCommand("saveFileProduct"); // устанавливаю
 															// команду
 															// для
-		saveFileButton.addActionListener(controllerWindowOne);
+		saveFileButton.addActionListener(controllerProduct);
 	}
 
-	public void registerLoadFileButton(ControllerWindowOne controllerWindowOne) {
+	public void registerLoadFileButton(ControllerProduct controllerProduct) {
 		loadFileButton.setActionCommand("loadFileProduct"); // устанавливаю
 															// команду
 															// для
-		loadFileButton.addActionListener(controllerWindowOne);
+		loadFileButton.addActionListener(controllerProduct);
 	}
 
 	public void activate() {

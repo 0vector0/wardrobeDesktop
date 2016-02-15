@@ -3,17 +3,17 @@ package test_1;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ControllerWindowOne implements ActionListener {
+public class ControllerProduct implements ActionListener {
 
 	private int count = 0;
 	// private OutSerialize outSerialize = new OutSerialize();
 
 	private ModelWardrobe modelWardrobe = new ModelWardrobe();
-	private ViewWindowOne viewWindowOne;
+	private ViewProduct viewProduct;
 
-	public ControllerWindowOne(ModelWardrobe modelWardrobe, ViewWindowOne viewWindowOne) {
+	public ControllerProduct(ModelWardrobe modelWardrobe, ViewProduct viewProduct) {
 		this.modelWardrobe = modelWardrobe;
-		this.viewWindowOne = viewWindowOne;
+		this.viewProduct = viewProduct;
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class ControllerWindowOne implements ActionListener {
 			System.out.println("<-");
 			if (count > 0) {
 				count--;
-				viewWindowOne.loadProduct(modelWardrobe.getProduct(count));
+				viewProduct.loadProduct(modelWardrobe.getProduct(count));
 			}
 			return;
 		}
@@ -30,13 +30,13 @@ public class ControllerWindowOne implements ActionListener {
 			System.out.println("->");
 			if (count < modelWardrobe.getSizeProductList() - 1) {
 				count++;
-				viewWindowOne.loadProduct(modelWardrobe.getProduct(count));
+				viewProduct.loadProduct(modelWardrobe.getProduct(count));
 			}
 			return;
 		}
 		if (e.getActionCommand().equals("saveProduct")) {
 			System.out.println("saveProduct");
-			viewWindowOne.saveProduct(modelWardrobe);
+			viewProduct.saveProduct(modelWardrobe);
 			count++;
 			return;
 		}
@@ -50,18 +50,18 @@ public class ControllerWindowOne implements ActionListener {
 			System.out.println("loadFileProduct");
 			// modelWardrobe.setProductList(outSerialize.loadFile());
 			modelWardrobe.setProductList(OutSerialize.loadFile());
-			viewWindowOne.loadProduct(modelWardrobe.getProduct(0));
+			viewProduct.loadProduct(modelWardrobe.getProduct(0));
 			return;
 		}
 	}
 
 	void startApp() {
-		viewWindowOne.registerLeftButton(this);
-		viewWindowOne.registerRightButton(this);
-		viewWindowOne.registerSaveButton(this);
-		viewWindowOne.registerSaveFileButton(this);
-		viewWindowOne.registerLoadFileButton(this);
+		viewProduct.registerLeftButton(this);
+		viewProduct.registerRightButton(this);
+		viewProduct.registerSaveButton(this);
+		viewProduct.registerSaveFileButton(this);
+		viewProduct.registerLoadFileButton(this);
 
-		viewWindowOne.activate(); // отображает окно
+		viewProduct.activate(); // отображает окно
 	}
 }
