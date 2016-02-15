@@ -15,9 +15,9 @@ public class ControllerCurrentDay extends Observable implements ActionListener, 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("openViewProductList")) {
-			System.out.println("openViewProductList");
-			System.out.println("setChanged");
-			System.out.println("notifyObservers");
+			// System.out.println("openViewProductList");
+			// System.out.println("setChanged");
+			// System.out.println("notifyObservers");
 			setChanged();
 			notifyObservers();
 			// outSerialize.saveFile(modelWardrobe.getProductList());

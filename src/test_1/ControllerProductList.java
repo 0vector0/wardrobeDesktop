@@ -21,9 +21,7 @@ public class ControllerProductList extends Observable implements ActionListener,
 	public void startApp() {
 		viewProductList.registerSaveProductList(this);
 		viewProductList.registerLoadProductList(this);
-		viewProductList.activate();
-
-		// TODO Auto-generated method stub
+		viewProductList.registerController(this);
 
 	}
 
@@ -40,6 +38,16 @@ public class ControllerProductList extends Observable implements ActionListener,
 
 			// modelWardrobe.setProductList(outSerialize.loadFile());
 			// viewProductList.loadProductList(modelWardrobe);
+			return;
+		}
+		if (e.getActionCommand().equals("backFromProductList")) {
+			// System.out.println("openViewProductList");
+			// System.out.println("setChanged");
+			// System.out.println("notifyObservers");
+			setChanged();
+			notifyObservers();
+			System.out.println("Back");
+			// outSerialize.saveFile(modelWardrobe.getProductList());
 			return;
 		}
 

@@ -35,21 +35,30 @@ public class FramesController implements Observer {
 	void start() {
 		controllerCurrentDay.startApp();
 		// controllerProduct.startApp();
-		// controllerProductList.startApp();
+		controllerProductList.startApp();
 	}
 
-	void startControllerCurrentDay() {
-		controllerCurrentDay.startApp();
-		// controllerWindowOne.startApp();
-		// controllerProductList.startApp();
-	}
+	// void startControllerCurrentDay() {
+	// controllerCurrentDay.startApp();
+	// // controllerWindowOne.startApp();
+	// /// controllerProductList.startApp();
+	// }
 
 	@Override
 	public void update(Observable o, Object arg) {
 
 		if (o instanceof ControllerCurrentDay) {
 			ControllerCurrentDay controllerCurrentDay = (ControllerCurrentDay) o;
-			System.out.println("!!!!!");
+			controllerCurrentDay.hideFrame();
+			controllerProductList.showFrame();
+			// System.out.println("Сегодняшний день");
+		}
+		if (o instanceof ControllerProductList) {
+			ControllerProductList controllerProductList = (ControllerProductList) o;
+			controllerProductList.hideFrame();
+			controllerCurrentDay.showFrame();
+			// controllerProductList.showFrame();
+			// System.out.println("Гардероб");
 		}
 
 	}

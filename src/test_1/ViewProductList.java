@@ -1,6 +1,7 @@
 package test_1;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -20,6 +21,7 @@ public class ViewProductList extends JFrame implements VievInterface {
 	JButton saveProductList;
 	JButton loadProductList;
 	JButton newProductButton;
+	private JButton backButton;
 
 	/**
 	 * Launch the application.
@@ -79,6 +81,10 @@ public class ViewProductList extends JFrame implements VievInterface {
 
 		newProductButton = new JButton("newProductButton");
 		panelButton.add(newProductButton);
+
+		backButton = new JButton("Назад");
+
+		contentPane.add(backButton, BorderLayout.WEST);
 	}
 
 	public void registerSaveProductList(ControllerProductList controllerProductList) {
@@ -130,7 +136,8 @@ public class ViewProductList extends JFrame implements VievInterface {
 
 	@Override
 	public void registerController(ControllerInterface controllerInterface) {
-		// TODO Auto-generated method stub
+		backButton.setActionCommand("backFromProductList"); // устанавливаю
+		backButton.addActionListener((ActionListener) controllerInterface);
 
 	}
 
