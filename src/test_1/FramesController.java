@@ -5,13 +5,13 @@ import java.util.Observer;
 
 public class FramesController implements Observer {
 
-	ControllerProduct controllerProduct;
-	ControllerProductList controllerProductList;
-	ControllerCurrentDay controllerCurrentDay;
-	ModelWardrobe modelWardrobe;
-	ViewProduct viewProduct;
-	ViewProductList viewProductList;
-	ViewCurrentDay viewCurrentDay;
+	private ControllerProduct controllerProduct;
+	private ControllerProductList controllerProductList;
+	private ControllerCurrentDay controllerCurrentDay;
+	private ModelWardrobe modelWardrobe;
+	private ViewProduct viewProduct;
+	private ViewProductList viewProductList;
+	private ViewCurrentDay viewCurrentDay;
 
 	public FramesController() {
 		modelWardrobe = new ModelWardrobe();

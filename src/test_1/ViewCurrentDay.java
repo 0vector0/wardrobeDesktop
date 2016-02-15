@@ -12,36 +12,12 @@ import javax.swing.SwingConstants;
 
 public class ViewCurrentDay extends View {
 
-	// private JPanel contentPane;
 	private JButton wardrobeButton;
-
-	// /**
-	// * Launch the application.
-	// */
-	// public static void main(String[] args) {
-	// EventQueue.invokeLater(new Runnable() {
-	// public void run() {
-	// try {
-	// ViewCurrentDay frame = new ViewCurrentDay();
-	// frame.setVisible(true);
-	// } catch (Exception e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// });
-	// }
 
 	/**
 	 * Create the frame.
 	 */
 	public ViewCurrentDay() {
-		super();
-		// setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// setBounds(100, 100, 450, 300);
-		// contentPane = new JPanel();
-		// contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		// contentPane.setLayout(new BorderLayout(0, 0));
-		// setContentPane(contentPane);
 
 		JLabel label = new JLabel("Текущий день");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -72,16 +48,6 @@ public class ViewCurrentDay extends View {
 		wardrobeButton = new JButton("Гардероб");
 		panelButton.add(wardrobeButton, BorderLayout.CENTER);
 	}
-
-	// @Override
-	// public void activate() {
-	// setVisible(true);
-	// }
-	//
-	// @Override
-	// public void deActivate() {
-	// setVisible(false);
-	// }
 
 	@Override
 	public void registerController(ControllerInterface controllerInterface) {

@@ -6,9 +6,6 @@ import java.util.Observable;
 
 public class ControllerProductList extends Observable implements ActionListener, ControllerInterface {
 
-	private int count = 0;
-	private OutSerialize outSerialize = new OutSerialize();
-
 	private ModelWardrobe modelWardrobe = new ModelWardrobe();
 	private ViewProductList viewProductList;
 
@@ -60,5 +57,4 @@ public class ControllerProductList extends Observable implements ActionListener,
 	public void hideFrame() {
 		viewProductList.deActivate();
 	}
-
 }

@@ -9,7 +9,6 @@ import javax.swing.border.EmptyBorder;
 public abstract class View extends JFrame implements ViewInterface {
 
 	protected JPanel contentPane;
-	// private JButton wardrobeButton;
 
 	public View() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

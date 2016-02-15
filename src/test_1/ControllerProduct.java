@@ -7,7 +7,6 @@ import java.util.Observable;
 public class ControllerProduct extends Observable implements ActionListener, ControllerInterface {
 
 	private int count = 0;
-	// private OutSerialize outSerialize = new OutSerialize();
 
 	private ModelWardrobe modelWardrobe = new ModelWardrobe();
 	private ViewProduct viewProduct;
@@ -69,14 +68,10 @@ public class ControllerProduct extends Observable implements ActionListener, Con
 	@Override
 	public void showFrame() {
 		viewProduct.activate();
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void hideFrame() {
 		viewProduct.deActivate();
-		// TODO Auto-generated method stub
-
 	}
 }

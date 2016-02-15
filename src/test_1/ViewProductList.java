@@ -22,31 +22,9 @@ public class ViewProductList extends View implements ViewInterface {
 	private JButton backButton;
 
 	/**
-	 * Launch the application.
-	 */
-	// public static void main(String[] args) {
-	// EventQueue.invokeLater(new Runnable() {
-	// public void run() {
-	// try {
-	// ViewProductList frame = new ViewProductList();
-	// frame.setVisible(true);
-	// } catch (Exception e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// });
-	// }
-
-	/**
 	 * Create the frame.
 	 */
 	public ViewProductList() {
-		// setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// setBounds(600, 100, 450, 300);
-		// contentPane = new JPanel();
-		// contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		// contentPane.setLayout(new BorderLayout(0, 0));
-		// setContentPane(contentPane);
 
 		JPanel panelList = new JPanel();
 		contentPane.add(panelList, BorderLayout.CENTER);
@@ -86,16 +64,12 @@ public class ViewProductList extends View implements ViewInterface {
 	}
 
 	public void registerSaveProductList(ControllerProductList controllerProductList) {
-		saveProductList.setActionCommand("saveProductList"); // устанавливаю
-																// команду
-																// для
+		saveProductList.setActionCommand("saveProductList");
 		saveProductList.addActionListener(controllerProductList);
 	}
 
 	public void registerLoadProductList(ControllerProductList controllerProductList) {
-		loadProductList.setActionCommand("loadProductList"); // устанавливаю
-																// команду
-																// для
+		loadProductList.setActionCommand("loadProductList");
 		loadProductList.addActionListener(controllerProductList);
 	}
 
@@ -111,7 +85,6 @@ public class ViewProductList extends View implements ViewInterface {
 		// listModel.addElement("John Smith");
 		// listModel.addElement("Kathy Green");
 
-		;
 		// listModel = new DefaultListModel();
 		// list = new JList("");
 		// Product product = modelWardrobe.getProduct(0);
@@ -122,19 +95,9 @@ public class ViewProductList extends View implements ViewInterface {
 
 	}
 
-	// @Override
-	// public void activate() {
-	// setVisible(true);
-	// }
-	//
-	// @Override
-	// public void deActivate() {
-	// setVisible(false);
-	// }
-
 	@Override
 	public void registerController(ControllerInterface controllerInterface) {
-		backButton.setActionCommand("backFromProductList"); // устанавливаю
+		backButton.setActionCommand("backFromProductList");
 		backButton.addActionListener((ActionListener) controllerInterface);
 
 	}
