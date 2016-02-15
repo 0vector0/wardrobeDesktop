@@ -28,12 +28,14 @@ public class FramesController implements Observer {
 
 	void addObservers() {
 		controllerCurrentDay.addObserver(this);
+		controllerProduct.addObserver(this);
+		controllerProductList.addObserver(this);
 	}
 
 	void start() {
 		controllerCurrentDay.startApp();
-		controllerProduct.startApp();
-		controllerProductList.startApp();
+		// controllerProduct.startApp();
+		// controllerProductList.startApp();
 	}
 
 	void startControllerCurrentDay() {

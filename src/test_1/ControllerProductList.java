@@ -2,8 +2,9 @@ package test_1;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
 
-public class ControllerProductList implements ActionListener, ControllerInterface {
+public class ControllerProductList extends Observable implements ActionListener, ControllerInterface {
 
 	private int count = 0;
 	private OutSerialize outSerialize = new OutSerialize();
