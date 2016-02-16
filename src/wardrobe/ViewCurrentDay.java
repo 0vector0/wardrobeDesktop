@@ -47,6 +47,8 @@ public class ViewCurrentDay extends View {
 
 		wardrobeButton = new JButton("Гардероб");
 		panelButton.add(wardrobeButton, BorderLayout.CENTER);
+
+		// contentPane.setVisible(false);
 	}
 
 	@Override

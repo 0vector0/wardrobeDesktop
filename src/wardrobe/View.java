@@ -10,6 +10,10 @@ public abstract class View extends JFrame implements ViewInterface {
 
 	protected JPanel contentPane;
 
+	public JPanel getContentPane() {
+		return contentPane;
+	}
+
 	public View() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

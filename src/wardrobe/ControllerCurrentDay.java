@@ -24,7 +24,7 @@ public class ControllerCurrentDay extends Observable implements ActionListener, 
 	@Override
 	public void startApp() {
 		viewCurrentDay.registerController(this);
-		viewCurrentDay.activate();
+		// viewCurrentDay.activate();
 	}
 
 	@Override

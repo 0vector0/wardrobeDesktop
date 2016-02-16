@@ -3,6 +3,8 @@ package wardrobe;
 import java.util.Observable;
 import java.util.Observer;
 
+import test3.Frame0;
+
 public class FramesController implements Observer {
 
 	private ControllerProduct controllerProduct;
@@ -12,6 +14,7 @@ public class FramesController implements Observer {
 	private ViewProduct viewProduct;
 	private ViewProductList viewProductList;
 	private ViewCurrentDay viewCurrentDay;
+	Frame0 frame0;
 
 	public FramesController() {
 		modelWardrobe = new ModelWardrobe();
@@ -24,6 +27,8 @@ public class FramesController implements Observer {
 
 		viewCurrentDay = new ViewCurrentDay();
 		controllerCurrentDay = new ControllerCurrentDay(viewCurrentDay);
+
+		frame0 = new Frame0();
 	}
 
 	void addObservers() {
@@ -34,10 +39,13 @@ public class FramesController implements Observer {
 
 	void start() {
 		controllerCurrentDay.startApp();
-
+		// controllerCurrentDay.hideFrame();
 		controllerProductList.startApp();
 
-		controllerProduct.startApp();
+		frame0.setAnoherContentPane(viewCurrentDay.getContentPane());
+		controllerProductList.hideFrame();
+
+		// controllerProduct.startApp();
 	}
 
 	@Override
@@ -45,14 +53,18 @@ public class FramesController implements Observer {
 
 		if (o instanceof ControllerCurrentDay) {
 			ControllerCurrentDay controllerCurrentDay = (ControllerCurrentDay) o;
+			frame0.setAnoherContentPane(viewProductList.getContentPane());
+			frame0.repaint();
+
 			controllerCurrentDay.hideFrame();
-			controllerProductList.showFrame();
-			// System.out.println("Сегодняшний день");
+			// controllerProductList.showFrame();
+			System.out.println("Сегодняшний день");
 		}
 		if (o instanceof ControllerProductList) {
 			ControllerProductList controllerProductList = (ControllerProductList) o;
-			controllerProductList.hideFrame();
-			controllerCurrentDay.showFrame();
+			frame0.setAnoherContentPane(viewCurrentDay.getContentPane());
+			// controllerProductList.hideFrame();
+			// controllerCurrentDay.showFrame();
 			// controllerProductList.showFrame();
 			// System.out.println("Гардероб");
 		}
